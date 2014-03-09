@@ -1,0 +1,30 @@
+[mathjax]
+
+This project performs the mathetical inversion transformation.  A curve on the plane is inverted such that points within the unit circle are mapped outsid the unit circle and vice versa.
+
+<h3>Links</h3>
+
+<a href="http://www.aidansean.com/inverter">Live page</a>
+<a href="https://github.com/aidansean/inverter">GitHub repository</a>
+
+<h3>Overview</h3>
+
+This project was developed to satisfy my curiosity about the inversion transformation.  The user can choose to use on three coordinate systems, which are Cartesian, polar and parametric.  The equations are sent to a PHP script which generates an SVG file with Javascript embedded within in.  The SVG image then changes dynamically to show the user how the curve transforms under inversion.  The user can change the graphical settings to make a more aesthetically pleasing image.
+
+The transformation of the point \(ec{r}=(r,	heta)\) takes the form:
+
+egin{eqnarray}
+  r      & \to r'      & = 1/r        \\
+  \theta & \to \theta' & = \pi+\theta \\
+\end{eqnarray}
+
+
+<h3>Challenges</h3>
+<dl>
+<dt><em>Challenge</em>: The project should allow the user to specify an arbitrary equation to use, without incurring a penalty associated with parsing the equation.</dt>
+
+<dd><em>Solution</em>: By passing the equations via PHP, it is possible to write the equations otu without relying on a CPU intensive function such as <code>eval</code> to interpret the equations. (Resolved)</dd>
+<dt><em>Challenge</em>: This project requires Javascript to interact with an SVG iamge.</dt>
+
+<dd><em>Solution</em>: The security restrictions imposed on SVG images are severe, so any Javascript must be completely embedded within the SVG image itself.  This was not the first time I had embedded Javascript within an SVG image, but it was one of the first time I'd automated the writing of the SVG image to include Javascript. (Resolved)</dd>
+</dl>
